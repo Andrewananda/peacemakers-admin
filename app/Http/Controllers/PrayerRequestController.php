@@ -27,4 +27,11 @@ class PrayerRequestController extends Controller
         return view('prayer-request.all_prayer_requests',['prayerRequests'=>$prayerRequests]);
 
     }
+
+    public function getReviewedRequests() {
+        $reviewedPrayerRequests=Prayer_request::where(['status'=>'reviewed']);
+        return view('prayer-request.reviewed-requests',['reviewedPrayerRequests'=>$reviewedPrayerRequests]);
+
+    }
+
 }

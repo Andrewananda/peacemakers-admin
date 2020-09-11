@@ -43,9 +43,11 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/add-fellowship',[
         'uses'=>'FellowshipController@addFellowship','as'=>'post.fellowship'
     ]);
+
     Route::get('/all-fellowships',[
         'uses'=>'FellowshipController@getFellowships','as'=>'all.fellowships'
     ]);
+
 
     Route::get('/day',[
         'uses'=>'SermonController@getDay','as'=>'add.day'
@@ -54,8 +56,13 @@ Route::middleware(['auth'])->group(function (){
     Route::post('/add-day',[
         'uses'=>'SermonController@postDay','as'=>'post.day'
     ]);
+
     Route::get('/all-prayer-requests',[
         'uses'=>'PrayerRequestController@index','as'=>'prayer.requests'
+    ]);
+
+    Route::get('/reviewed-requests',[
+        'uses'=>'PrayerRequestController@getReviewedRequests','as'=>'reviewed.requests'
     ]);
 
 });

@@ -29,7 +29,7 @@
                         <a href="{{ route('prayer.requests') }}"> All </a>
                     </li>
                     <li>
-                        <a href="apps_mailbox.html"> Reviewed  </a>
+                        <a href="{{ route('reviewed.requests') }}"> Reviewed  </a>
                     </li>
                 </ul>
             </li>
