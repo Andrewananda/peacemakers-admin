@@ -86,10 +86,10 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="datatables" data-parent="#accordionExample">
                     <li>
-                        <a href="table_dt_basic.html"> Add News </a>
+                        <a href="{{ route('add.news') }}"> Add News </a>
                     </li>
                     <li>
-                        <a href="table_dt_basic-dark.html"> All News </a>
+                        <a href="{{ route('all.news') }}"> All News </a>
                     </li>
                 </ul>
             </li>
