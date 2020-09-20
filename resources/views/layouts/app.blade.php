@@ -229,6 +229,30 @@
     });
 
     multiCheck(c3);
+
+
+    // Growl notification
+    $('#block-growl').on('click', function() {
+        $.blockUI({
+            message: $('.blockui-growl-message'),
+            fadeIn: 700,
+            fadeOut: 700,
+            timeout: 3000, //unblock after 3 seconds
+            showOverlay: false,
+            centerY: false,
+            css: {
+                width: '250px',
+                backgroundColor: 'transparent',
+                top: '20px',
+                left: 'auto',
+                right: '20px',
+                border: 0,
+                opacity: .95,
+                zIndex: 1200,
+            }
+        });
+    });
+
 </script>
 <!--End DataTables-->
 

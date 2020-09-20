@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Auth::routes();
+
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -129,6 +131,28 @@ Route::middleware(['auth'])->group(function (){
 
     Route::post('/update-donation/{id}',[
         'as'=>'update.donation', 'uses'=>'DonationController@updateDonation'
+    ]);
+
+    //bulletin
+
+    Route::get('/bulletin',[
+        'as'=>'add.bulletin', 'uses'=>'BulletinController@index'
+    ]);
+
+    Route::post('/post-bulletin',[
+        'as'=>'post.bulletin', 'uses'=>'BulletinController@addBulletin'
+    ]);
+
+    Route::get('/bulletins',[
+        'as'=>'all.bulletins', 'uses'=>'BulletinController@allBulletins'
+    ]);
+
+    Route::get('/single-bulletin/{id}',[
+        'as'=>'single.bulletin', 'uses'=>'BulletinController@singleBulletin'
+    ]);
+
+    Route::post('/bulletin-update/{id}',[
+        'as'=>'update.singleBulletin', 'uses'=>'BulletinController@updateBulletin'
     ]);
 
 

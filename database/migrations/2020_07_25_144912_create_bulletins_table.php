@@ -15,10 +15,11 @@ class CreateBulletinsTable extends Migration
     {
         Schema::create('bulletins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('day-id');
             $table->string('title');
             $table->text('description');
             $table->string('featured_photo');
+            $table->date('date');
+            $table->string('bulletin_by');
             $table->timestamps();
         });
     }
