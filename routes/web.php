@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function (){
         'as'=>'logout','uses'=>'Auth\LoginController@logout'
     ]);
 
+    //Sermons
+
     Route::get('/add-sermon',[
         'uses'=>'SermonController@index', 'as'=>'sermon'
     ]);
@@ -36,6 +38,7 @@ Route::middleware(['auth'])->group(function (){
         'uses'=>'SermonController@editSermon','as'=>'single.sermon'
     ]);
 
+    //Fellowships
     Route::get('/fellowship',[
         'uses'=>'FellowshipController@index','as'=>'add.fellowship'
     ]);
@@ -57,6 +60,8 @@ Route::middleware(['auth'])->group(function (){
         'uses'=>'SermonController@postDay','as'=>'post.day'
     ]);
 
+    //Prayer Request
+
     Route::get('/all-prayer-requests',[
         'uses'=>'PrayerRequestController@index','as'=>'prayer.requests'
     ]);
@@ -65,6 +70,7 @@ Route::middleware(['auth'])->group(function (){
         'uses'=>'PrayerRequestController@getReviewedRequests','as'=>'reviewed.requests'
     ]);
 
+    //News
     Route::get('/add-news',[
        'uses'=>'NewsController@index','as'=>'add.news'
     ]);
@@ -82,6 +88,47 @@ Route::middleware(['auth'])->group(function (){
     ]);
     Route::post('update-news/{id}',[
         'uses'=>'NewsController@updateNews','as'=>'update.news'
+    ]);
+
+    //Donations
+    Route::get('donation-type',[
+        'uses'=>'DonationController@donationType','as'=>'donation.type'
+    ]);
+
+    Route::get('/donation-types',[
+        'uses'=>'DonationController@allDonationTypes', 'as'=>'donation.types'
+    ]);
+
+    Route::get('/donation_type/{id}',[
+        'uses'=>'DonationController@singleDonationType', 'as'=>'single.donation_type'
+    ]);
+
+    Route::post('/update-donation-type/{id}',[
+        'uses'=>'DonationController@updateDonationType', 'as'=>'update.donation-type'
+    ]);
+
+    Route::post('/add-donation-type',[
+        'uses'=>'DonationController@addDonationType','as'=>'post.donation-type'
+    ]);
+
+    Route::get('/add-donation',[
+        'uses'=>'DonationController@index', 'as'=>'add.donation'
+    ]);
+
+    Route::post('/post-donation',[
+        'as'=>'post.donation','uses'=>'DonationController@postDonation'
+    ]);
+
+    Route::get('/donations',[
+       'as'=>'donations','uses'=>'DonationController@allDonations'
+    ]);
+
+    Route::get('/donation/{id}',[
+        'as'=>'single.donation','uses'=>'DonationController@singleDonation'
+    ]);
+
+    Route::post('/update-donation/{id}',[
+        'as'=>'update.donation', 'uses'=>'DonationController@updateDonation'
     ]);
 
 

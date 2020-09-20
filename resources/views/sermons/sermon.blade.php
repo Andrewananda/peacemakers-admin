@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="day_id">Day</label> <br>
-                        <select name="day_id" id="day_id" class="selectpicker" data-live-search="true">
+                        <select name="day_id" id="day_id" class="selectpicker form-control" data-live-search="true">
                             <option>Select Sermon Day</option>
                             @foreach($days as $day)
                                 <option value="{{ $day->id }}">{{ $day->title }}</option>

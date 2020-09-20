@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52ba2f7b901e34f553aece003f44ff2e",
+    "content-hash": "467eca912c66e54f7223c6839ba6b4a2",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -371,6 +371,69 @@
                 "trusted proxy"
             ],
             "time": "2020-06-23T01:36:47+00:00"
+        },
+        {
+            "name": "gathuku/laravelmpesa",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gathuku/laravel_mpesa.git",
+                "reference": "1bc1c07b8677ad06168ed1a58ccb7a4ea797c24b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gathuku/laravel_mpesa/zipball/1bc1c07b8677ad06168ed1a58ccb7a4ea797c24b",
+                "reference": "1bc1c07b8677ad06168ed1a58ccb7a4ea797c24b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0|^6.0|^7.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gathuku\\Mpesa\\MpesaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Mpesa": "Gathuku\\Mpesa\\Facades\\Mpesa"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gathuku\\Mpesa\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "moses gathuku",
+                    "email": "mosesgathuku95@gmail.com"
+                }
+            ],
+            "description": "A simple mpesa package for laravel framework",
+            "homepage": "https://github/gathuku/laravel_mpesa",
+            "keywords": [
+                "gathuku",
+                "laravel",
+                "mpesa"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/gathuku",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-30T18:19:28+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1474,6 +1537,45 @@
                 "uuid"
             ],
             "time": "2020-02-21T04:36:14+00:00"
+        },
+        {
+            "name": "safaricom/mpesa",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/safaricom/mpesa-php-sdk.git",
+                "reference": "c66895dcdec8df1f496e017708c557fc252340c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/safaricom/mpesa-php-sdk/zipball/c66895dcdec8df1f496e017708c557fc252340c5",
+                "reference": "c66895dcdec8df1f496e017708c557fc252340c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "symfony/dotenv": "^4.3@dev"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Safaricom\\Mpesa\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Moses Nandwa",
+                    "email": "mnandwa@safaricom.co.ke"
+                }
+            ],
+            "description": "A PHP package for Mpesa API",
+            "time": "2019-01-06T16:01:21+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4921,6 +5023,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

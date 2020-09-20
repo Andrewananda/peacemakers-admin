@@ -15,13 +15,13 @@ class CreateDonationsTable extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('donation_id');
+            $table->integer('donation_type_id');
             $table->string('title');
             $table->date('date');
             $table->text('description');
             $table->string('featured_photo');
             $table->string('expected_amount');
-            $table->string('length');
+            $table->dateTime('duration');
             $table->timestamps();
         });
     }

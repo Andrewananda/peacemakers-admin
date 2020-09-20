@@ -106,10 +106,16 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="forms" data-parent="#accordionExample">
                     <li>
-                        <a href="form_bootstrap_basic.html"> Add Giving </a>
+                        <a href="{{ route('add.donation') }}"> Add Donation </a>
                     </li>
                     <li>
-                        <a href="form_input_group_basic.html"> All Givings </a>
+                        <a href="{{ route('donations') }}"> All Donations </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('donation.type') }}"> Donation Types </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('donation.types') }}"> All Donation Types </a>
                     </li>
                 </ul>
             </li>
@@ -148,9 +154,7 @@
                     <li>
                         <a href="{{ route('add.day') }}"> Add Day </a>
                     </li>
-                    <li>
-                        <a href="user_account_setting.html"> Account Settings </a>
-                    </li>
+
                 </ul>
             </li>
 

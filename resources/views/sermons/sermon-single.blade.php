@@ -42,7 +42,6 @@
                         <textarea type="text" class="form-control" name="description" id="description" placeholder="Sermon Description">{{ $sermon->description }}</textarea>
                     </div>
 
-{{--                    {{ dd("http://localhost/peacemakersAdmin/storage/app/public/sermons/". $sermon->url) }}--}}
                     <div class="form-group mb-4">
                         <iframe class="embed-responsive-item" width="400" height="300" src="{{ "http://localhost/peacemakersAdmin/storage/app/public/sermons/".$sermon->url }}" allowfullscreen></iframe>
                     </div>

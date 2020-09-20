@@ -17,7 +17,6 @@ class CreateDonationTypesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->date('date');
             $table->timestamps();
         });
     }
