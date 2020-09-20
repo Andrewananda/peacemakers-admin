@@ -30,10 +30,8 @@
                     <form class="text-left" action="{{ route('login') }}" method="post">
 
                         @csrf
-
+                        @include('errors.message')
                         <div class="form">
-
-                            @include('errors.message')
 
                             <div id="username-field" class="field-wrapper input">
                                 <label for="username">USERNAME</label>
