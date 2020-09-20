@@ -26,13 +26,16 @@ class SermonController extends Controller
 
         if ($validation){
             if ($request->has('url')){
+                //get file
                 $url = $request->file('url');
+                //get file name
                 $name = $url->getClientOriginalName();
                 $filename = pathinfo($name,PATHINFO_FILENAME);
                 $extension = $request->file('url')->getClientOriginalExtension();
                 $filenameToStore = $filename . '_'.time().'.' .$extension;
                 $request->file('url')->storeAs('public/sermons',$filenameToStore);
 
+                //post sermon
                 $sermon = new Sermon();
                 $sermon->title = $request['title'];
                 $sermon->verse = $request['verse'];

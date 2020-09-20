@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Fellowship;
+use App\News;
+use App\Prayer_request;
+use App\Sermon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $prayer_requests=Prayer_request::all();
+        $news=News::all();
+        $sermons=Sermon::all();
+        $fellowships=Fellowship::all();
+
+        return view('home',['prayer_requests'=>$prayer_requests,'news'=>$news,'sermons'=>$sermons,'fellowships'=>$fellowships]);
     }
 }
