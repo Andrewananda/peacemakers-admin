@@ -20,7 +20,6 @@
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Request</th>
-                            <th class="text-center">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,17 +29,7 @@
                             <td class="user-name">{{ $reviewedPrayerRequest->name }}</td>
                             <td>{{ $reviewedPrayerRequest->phone }}</td>
                             <td>{{ $reviewedPrayerRequest->description }}</td>
-                            <td class="text-center">
-                                <div class="dropdown custom-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                    </a>
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <a class="dropdown-item" href="{{ route('single.sermon',['id'=>$reviewedPrayerRequest->id]) }}">View</a>
-                                    </div>
-                                </div>
-                            </td>
                         </tr>
                         @endforeach
 

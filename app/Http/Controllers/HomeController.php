@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $prayer_requests=Prayer_request::all();
+        $prayer_requests=Prayer_request::where(['is_viewed'=>0])->get();
         $news=News::all();
         $sermons=Sermon::all();
         $fellowships=Fellowship::all();

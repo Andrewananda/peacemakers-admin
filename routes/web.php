@@ -72,6 +72,10 @@ Route::middleware(['auth'])->group(function (){
         'uses'=>'PrayerRequestController@getReviewedRequests','as'=>'reviewed.requests'
     ]);
 
+    Route::get('/review-request/{id}',[
+        'as'=>'review.request','uses'=>'PrayerRequestController@updateRequest'
+    ]);
+
     //News
     Route::get('/add-news',[
        'uses'=>'NewsController@index','as'=>'add.news'
