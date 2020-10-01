@@ -18,6 +18,7 @@ class CreateFellowshipsTable extends Migration
             $table->string('title');
             $table->integer('day_id');
             $table->string('url');
+            $table->text('description')->nullable();
             $table->date('date');
             $table->timestamps();
         });

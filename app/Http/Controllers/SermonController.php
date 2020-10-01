@@ -22,6 +22,7 @@ class SermonController extends Controller
             'description'=>'required',
             'date'=>'required',
             'sermon_by'=>'required',
+            'featured_photo'=>'required'
         ]);
 
         if ($validation){
@@ -35,6 +36,12 @@ class SermonController extends Controller
                 $filenameToStore = $filename . '_'.time().'.' .$extension;
                 $request->file('url')->storeAs('public/sermons',$filenameToStore);
 
+                $featured_photo = $request->file('featured_photo');
+                $photo_name = $featured_photo->getClientOriginalName();
+                $photo_extension = $request->file('featured_photo')->getClientOriginalExtension();
+                $photo_to_store = $photo_name . '_' .time().'.'.$photo_extension;
+                $request->file('featured_photo')->storeAs('public/sermons',$photo_to_store);
+
                 //post sermon
                 $sermon = new Sermon();
                 $sermon->title = $request['title'];
@@ -43,6 +50,7 @@ class SermonController extends Controller
                 $sermon->sermon_by = $request['sermon_by'];
                 $sermon->date = $request['date'];
                 $sermon->day_id = $request['day_id'];
+                $sermon->featured_photo = $photo_to_store;
                 $sermon->url = $filenameToStore;
 
                 $sermon->save();
@@ -64,7 +72,8 @@ class SermonController extends Controller
 
     public function editSermon($id) {
         $sermon = Sermon::where(['id'=>$id])->first();
-        return view('sermons.sermon-single',['sermon'=>$sermon]);
+        $base_url = "http://localhost/PeacemakersAdmin/storage/app/public/";
+        return view('sermons.sermon-single',['sermon'=>$sermon,'base_url'=>$base_url]);
     }
 
     public function getSermons() {

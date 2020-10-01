@@ -37,7 +37,7 @@
                                             </a>
 
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                <a class="dropdown-item" href="{{ route('single.sermon',['id'=>$fellowship->id]) }}">View</a>
+                                                <a class="dropdown-item" href="{{ route('single.fellowship',['id'=>$fellowship->id]) }}">View</a>
                                             </div>
                                         </div>
                                     </td>

@@ -38,13 +38,21 @@
                         <label for="date">Date</label>
                         <input type="date" class="form-control" name="date" id="date">
                     </div>
+
                     <div class="form-group mb-4">
                         <label for="description">Description</label>
                         <textarea type="text" class="form-control" name="description" id="description" placeholder="Sermon Description"></textarea>
                     </div>
+
+                    <div class="form-group mb-4">
+                        <label for="featured_photo">Featured Photo(Required *)</label>
+                        <input type="file" id="featured_photo" name="featured_photo" accept="file_extension|*image/*|media_type">
+                    </div>
+
+
                     <div class="form-group mb-4">
                         <div class="custom-file-container" data-upload-id="myFirstImage">
-                            <label>Upload (Video / Image) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">x</a></label>
+                            <label>Upload (Video) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">x</a></label>
                             <label class="custom-file-container__custom-file" >
                                 <input type="file" class="custom-file-container__custom-file__custom-file-input" id="url" name="url" accept="file_extension|audio/*|video/*|image/*|media_type">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="71191571" />

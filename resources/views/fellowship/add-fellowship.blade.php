@@ -27,10 +27,10 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="day_id">Day</label> <br>
-                        <select name="day_id" id="day_id" class="selectpicker" data-live-search="true">
-                            <option value="0">Select Day</option>
-                             @foreach($days as $day)
-                            <option value="{{ $day->id }}">{{ $day->title }}</option>
+                        <select name="day_id" id="day_id" class="selectpicker form-control" data-live-search="true">
+                            <option>Select Fellowship Day</option>
+                            @foreach($days as $day)
+                                <option value="{{ $day->id }}">{{ $day->title }}</option>
                             @endforeach
                         </select>
                     </div>

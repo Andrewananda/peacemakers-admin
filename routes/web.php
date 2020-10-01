@@ -45,12 +45,19 @@ Route::middleware(['auth'])->group(function (){
         'uses'=>'FellowshipController@index','as'=>'add.fellowship'
     ]);
 
-    Route::get('/add-fellowship',[
+    Route::post('/add-fellowship',[
         'uses'=>'FellowshipController@addFellowship','as'=>'post.fellowship'
     ]);
 
     Route::get('/all-fellowships',[
         'uses'=>'FellowshipController@getFellowships','as'=>'all.fellowships'
+    ]);
+
+    Route::get('/single-fellowship/{id}',[
+        'uses'=>'FellowshipController@getSingleFellowship','as'=>'single.fellowship'
+    ]);
+    Route::post('/update-fellowship/{id}',[
+        'as'=>'update.sermon', 'uses'=>'FellowshipController@updateFellowship'
     ]);
 
 

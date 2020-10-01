@@ -16,7 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('sermons',['uses'=>'SermonController@getSermons']);
-Route::get('fellowships',['uses'=>'FellowshipController@getFellowships']);
-Route::get('news',['uses'=>'NewsController@getNews']);
-Route::post('prayer_request',['uses'=>'PrayerRequestController@postPrayerRequest']);
+Route::get('sermons',['uses'=>'ApiController@sermons']);
+Route::get('fellowships',['uses'=>'ApiController@fellowships']);
+Route::get('news',['uses'=>'ApiController@news']);
+Route::post('prayer_request',['uses'=>'ApiController@prayer_request']);
+Route::post('contact',['uses'=>'ApiController@contact_us']);

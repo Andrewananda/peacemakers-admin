@@ -43,7 +43,11 @@
                     </div>
 
                     <div class="form-group mb-4">
-                        <iframe class="embed-responsive-item" width="400" height="300" src="{{ "http://localhost/peacemakersAdmin/storage/app/public/sermons/".$sermon->url }}" allowfullscreen></iframe>
+                        <video width="700" controls>
+                            <source src="{{ $base_url . "sermons/" . $sermon->url }}" type="video/mp4">
+                            <source src="{{ $base_url . "sermons/" . $sermon->url }}" type="video/ogg">
+                            Your browser does not support HTML video.
+                        </video>
                     </div>
 
                     <button style="" class="btn btn-primary"><span>Submit</span></button>

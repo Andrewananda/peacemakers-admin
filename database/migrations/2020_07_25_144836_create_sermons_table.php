@@ -18,6 +18,7 @@ class CreateSermonsTable extends Migration
             $table->string('title');
             $table->string('verse');
             $table->integer('day_id')->unsigned();
+            $table->string('featured_photo');
             $table->string('url');
             $table->date('date');
             $table->text('description');
